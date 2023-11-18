@@ -62,7 +62,7 @@ flutter:
   assets:
     - asset/images/baground_register.png
     - asset/images/studying.png
-    - asset/twiter.png
+    - asset/tw.png
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

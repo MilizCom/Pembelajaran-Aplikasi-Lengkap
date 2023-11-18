@@ -18,7 +18,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         elevation: 0,
-        title: Text("X"),
+        title: Image.asset("asset/tw.png"),
         actions: [
           IconButton(
             icon: Icon(Icons.search, color: Colors.black),
