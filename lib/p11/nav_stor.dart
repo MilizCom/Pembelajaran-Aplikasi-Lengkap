@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pembelajaran_full/beranda.dart';
+// import 'package:pembelajaran_full/beranda.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -18,7 +18,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         elevation: 0,
-        title: Image.asset("asset/tw.png"),
+        title: new Image.asset('asset/tw.png', height: 50, width: 50),
         actions: [
           IconButton(
             icon: Icon(Icons.search, color: Colors.black),
@@ -37,9 +37,30 @@ class MyHomePage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+          child: ListView(
             children: [
+              SizedBox(
+                height: 40,
+              ),
+              Text(
+                "Welcome",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Image.asset(
+                "asset/mid.png",
+                height: 200,
+              ),
+              SizedBox(
+                height: 100,
+              ),
               CostumTextField(
                 title: "username",
                 ctr: emailControler,
@@ -67,12 +88,18 @@ class MyHomePage extends StatelessWidget {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    padding: EdgeInsets.symmetric(
-                      vertical: 20,
-                      horizontal: 100,
-                    ),
-                    elevation: 0),
+                  backgroundColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  elevation: 0,
+                  padding: EdgeInsets.symmetric(horizontal: 150, vertical: 14),
+                  primary: Colors.white,
+                  textStyle: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 child: Text("Login"),
               ),
             ],
@@ -97,6 +124,7 @@ class CostumTextField extends StatelessWidget {
           height: 6,
         ),
         TextFormField(
+          obscureText: title == "password" ? true : false,
           controller: ctr,
           decoration: const InputDecoration(
             enabledBorder: OutlineInputBorder(
@@ -105,7 +133,12 @@ class CostumTextField extends StatelessWidget {
                 width: 1,
               ),
             ),
-            focusedBorder: OutlineInputBorder(),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.pinkAccent,
+                width: 1,
+              ),
+            ),
           ),
         ),
       ],

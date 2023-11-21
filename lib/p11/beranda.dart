@@ -20,8 +20,24 @@ class BerandaPage extends StatelessWidget {
         body: Container(
             padding: EdgeInsets.all(20),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Image.asset("asset/images/studying.png"),
+                Text(
+                  "Selamat Datang di Sistem Informasi Akademik",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 17,
+                      fontFamily: 'poppins',
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Image.asset("asset/images/studying.png"),
+                SizedBox(
+                  height: 20,
+                ),
+                
               ],
             )));
   }
